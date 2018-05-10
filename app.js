@@ -34,6 +34,7 @@ console.log("Hello World!!! Welcome to Jodhpuri Furnitures...");
 var db = admin.firestore();
 var app = express();
 app.listen(8000);
+app.use(bodyParser());
 app.use(bodyParser.json());
 
 configTemplateEngine(app);
@@ -71,5 +72,19 @@ app.get('/products', function(req, res) {
             res.send(responseData);
         });
 });
+
+app.post('/login', function(req, res) {
+    if (req.body.username === 'sangeet' && req.body.password === 'manghnani') {
+        res.redirect('/categories');
+        res.end();
+    } else {
+        res.redirect('/');
+        res.end();
+    }
+});
+
+app.get('/categories', function(req, res) {
+    res.render('categories/categories');
+})
 
 module.exports = app;

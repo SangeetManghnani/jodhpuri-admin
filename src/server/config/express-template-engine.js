@@ -12,8 +12,8 @@ module.exports = function(app) {
     ]
 
     // Handlebars engine setup
-    app.engine('hbs', exphbs({
-        extname: '.hbs',
+    app.engine('html', exphbs({
+        extname: '.html',
         partialsDir: CLIENT_DIR,
         layoutsDir: CLIENT_DIR,
         defaultLayout: "main",
@@ -21,10 +21,11 @@ module.exports = function(app) {
 
 
     // views dir setup
+
     app.set('views', CLIENT_DIR);
 
     // view engine set
-    app.set('view engine', 'hbs');
+    app.set('view engine', 'html');
 
     // App render method returns a promise
     // app.render = Promise.promisify(app.render).bind(app);
