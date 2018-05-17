@@ -1,0 +1,8 @@
+{
+    "name": "John Doe",
+    "email": "johndoe@abc.com",
+    "phone": "9876543210",
+    "createdDate": "1234567890",
+    "orderIds": [],
+    "cartId": ""
+}

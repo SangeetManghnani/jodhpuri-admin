@@ -1,0 +1,34 @@
+{
+    "userId": "user_id_here",
+    "orderDate": "1234567890",
+    "orderState": "placed / confirmed / delivered",
+    "paymentMode": "CC / DC / Online Banking / Wallet",
+    "paymentStatus": "fail / success / pending",
+    "products": [{
+            "id": "product_id_here",
+            "count": 2,
+            "total": 1200
+        },
+        {
+            "id": "another_product_id_here",
+            "count": 1,
+            "total": 1600
+        }
+    ],
+    "totalValue": 2800,
+    "taxApplicable": 200,
+    "finalPayable": 3000,
+    "delivery": {
+        "contactName": "Jane Doe",
+        "contactNumber": "9876543210",
+        "address": {
+            "houseNo": "12",
+            "addressLine1": "Regalia First, near Orion Mall",
+            "addressLine2": "",
+            "landmark": "Opp. Federal Bank",
+            "city": "Bengaluru",
+            "state": "Karnataka",
+            "pin": "560078"
+        }
+    }
+}

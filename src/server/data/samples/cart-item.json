@@ -1,0 +1,12 @@
+{
+    "user": "user_id_here",
+    "products": [{
+            "id": "product_id_here",
+            "count": 2
+        },
+        {
+            "id": "another_product_id_here",
+            "count": 1
+        }
+    ]
+}
