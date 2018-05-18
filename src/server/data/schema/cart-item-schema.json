@@ -1,24 +1,22 @@
 {
     "user": {
         "type": "string",
-        "required": true,
         "minLen": 1
     },
     "products": {
         "type": "array",
-        "required": "true",
         "items": {
             "type": "object",
             "properties": {
                 "id": {
-                    "type": "string",
-                    "required": true
+                    "type": "string"
                 },
                 "count": {
-                    "type": "int",
-                    "required": true
-                }
+                    "type": "number"
+                },
+                "required": ["id", "count"]
             }
         }
-    }
+    },
+    "required": ["user", "products"]
 }

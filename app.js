@@ -1,10 +1,15 @@
 var admin = require('firebase-admin');
 var jsonfile = require('jsonfile');
 var express = require('express');
-var bodyParser = require('body-parser');
 var path = require('path');
 var exphbs = require('express-handlebars');
 var configTemplateEngine = require('./src/server/config/express-template-engine');
+var validator = require('./src/server/data/validationFramework');
+var Constants = require('./src/server/Constants');
+var sampleCartItem = require('./src/server/data/samples/cart-item.json');
+
+
+console.log(validator.validate(Constants.LABEL_CART_ITEM, sampleCartItem));
 
 var productSample = {
     name: 'Sofa',
@@ -34,8 +39,6 @@ console.log("Hello World!!! Welcome to Jodhpuri Furnitures...");
 var db = admin.firestore();
 var app = express();
 app.listen(8000);
-app.use(bodyParser());
-app.use(bodyParser.json());
 
 configTemplateEngine(app);
 
@@ -55,7 +58,7 @@ app.get('/', function(req, res) {
 })
 
 app.post('/products', function(req, res) {
-    console.log(req.body);
+    validator.validate(Constants.LABEL_PRODUCT_ITEM, req.body);
     db.collection('products').add(req.body);
 });
 
