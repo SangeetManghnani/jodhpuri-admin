@@ -1,0 +1,15 @@
+{
+    "name": {
+        "type": "string",
+        "minLen": 1
+    },
+    "subcategories": {
+        "type": "array",
+        "minLen": 1,
+        "items": {
+            "type": "string",
+            "minLen": 1
+        }
+    },
+    "required": ["name", "subcategories"]
+}
