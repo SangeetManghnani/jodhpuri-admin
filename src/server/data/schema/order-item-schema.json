@@ -49,54 +49,50 @@
     },
     "delivery": {
         "type": "object",
-        "items": {
-            "type": "object",
-            "properties": {
-                "contactName": {
-                    "type": "string",
-                    "minLen": 1
-                },
-                "contactNumber": {
-                    "type": "number",
-                    "minLen": 10
-                },
-                "address": {
-                    "type": "object",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "houseNo": {
-                                "type": "string",
-                                "minLen": 1
-                            },
-                            "addressLine1": {
-                                "type": "string",
-                                "minLen": 1
-                            },
-                            "addressLine2": {
-                                "type": "string"
-                            },
-                            "landmark": {
-                                "type": "string"
-                            },
-                            "city": {
-                                "type": "string",
-                                "minLen": 1
-                            },
-                            "state": {
-                                "type": "string",
-                                "minLen": 1
-                            },
-                            "pin": {
-                                "type": "string",
-                                "minLen": 1
-                            },
-                            "required": ["houseNo", "addressLine1", "city", "state", "pin"]
-                        }
-                    }
-                },
-                "required": ["contactName", "contactNumber", "address"]
-            }
+        "properties": {
+            "contactName": {
+                "type": "string",
+                "minLen": 1
+            },
+            "contactNumber": {
+                "type": "string",
+                "minLen": 10,
+                "maxLen": 10
+            },
+            "address": {
+                "type": "object",
+                "properties": {
+                    "houseNo": {
+                        "type": "string",
+                        "minLen": 1
+                    },
+                    "addressLine1": {
+                        "type": "string",
+                        "minLen": 1
+                    },
+                    "addressLine2": {
+                        "type": "string"
+                    },
+                    "landmark": {
+                        "type": "string"
+                    },
+                    "city": {
+                        "type": "string",
+                        "minLen": 1
+                    },
+                    "state": {
+                        "type": "string",
+                        "minLen": 1
+                    },
+                    "pin": {
+                        "type": "string",
+                        "minLen": 1
+                    },
+                    "required": ["houseNo", "addressLine1", "city", "state", "pin"]
+                }
+
+            },
+            "required": ["contactName", "contactNumber", "address"]
         }
     },
     "required": ["userId", "orderDate", "orderState", "paymentMode", "paymentStatus", "products", "totalValue", "taxApplicable", "finalPayable", "delivery"]

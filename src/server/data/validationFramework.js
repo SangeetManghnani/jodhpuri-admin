@@ -22,6 +22,8 @@ module.exports.validate = function(modelName, newObject) {
             schema = productItemSchema;
             break;
         case Constants.LABEL_USER:
+            schema = userSchema;
+            break;
         default:
             schema = null;
     }
@@ -46,7 +48,9 @@ function validateUtil(newObject, schema) {
 
     var result = true;
 
-    newObjectKeys.map((key, element) => {
+
+    for (i in newObjectKeys) {
+        key = newObjectKeys[i];
         if (schema[key] === undefined) {
             return false;
         }
@@ -59,14 +63,17 @@ function validateUtil(newObject, schema) {
         } else if (newObject[key] instanceof Array) {
             result = validateArray(newObject[key], schema[key])
         } else if (typeof newObject[key] == 'object') {
-            result = validateUtil(newObject[key], schema[key].properties)
-        } else {
-
+            if (schema[key].properties)
+                result = validateUtil(newObject[key], schema[key].properties)
+            else
+                result = true;
         }
 
-        // if any of the tests failed, reject the input object
+        if (!result) {
+            return result;
+        }
+    }
 
-    });
     return result;
 }
 

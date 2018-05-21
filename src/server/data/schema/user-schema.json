@@ -9,6 +9,7 @@
     },
     "phone": {
         "type": "string",
+        "maxLen": 10,
         "minLen": 10
     },
     "createdDate": {
@@ -16,7 +17,15 @@
         "minLen": 1
     },
     "orderIds": {
-        "type": "string"
+        "type": "array",
+        "minLen": 1,
+        "items": {
+            "type": "string",
+            "properties": {
+                "type": "string",
+                "minLen": 1
+            }
+        }
     },
     "cartId": {
         "type": "string",
