@@ -10,10 +10,11 @@ var sampleCartItem = require('./src/server/data/samples/cart-item.json');
 var sampleCategory = require('./src/server/data/samples/category.json');
 var orderItem = require('./src/server/data/samples/order-item.json');
 var productItem = require('./src/server/data/samples/product-item.json');
+var user = require('./src/server/data/samples/user.json');
 
 
 // console.log(validator.validate(Constants.LABEL_CART_ITEM, sampleCartItem));
-console.log(validator.validate(Constants.LABEL_PRODUCT_ITEM, productItem));
+console.log(validator.validate(Constants.LABEL_CART_ITEM, sampleCartItem));
 
 var productSample = {
     name: 'Sofa',
