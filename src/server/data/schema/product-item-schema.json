@@ -1,1 +1,30 @@
-{}
+{
+    "name": {
+        "type": "string",
+        "minLen": 1
+    },
+    "description": {
+        "type": "object"
+    },
+    "category": {
+        "type": "string",
+        "minLen": 1
+    },
+    "subcategory": {
+        "type": "string",
+        "minLen": 1
+    },
+    "price": {
+        "type": "number"
+    },
+    "discountPercent": {
+        "type": "number"
+    },
+    "itemsRemaining": {
+        "type": "number"
+    },
+    "likes": {
+        "type": "number"
+    },
+    "required": ["name", "description", "category", "subcategory", "price", "itemsRemaining"]
+}

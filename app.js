@@ -7,9 +7,13 @@ var configTemplateEngine = require('./src/server/config/express-template-engine'
 var validator = require('./src/server/data/validationFramework');
 var Constants = require('./src/server/Constants');
 var sampleCartItem = require('./src/server/data/samples/cart-item.json');
+var sampleCategory = require('./src/server/data/samples/category.json');
+var orderItem = require('./src/server/data/samples/order-item.json');
+var productItem = require('./src/server/data/samples/product-item.json');
 
 
-console.log(validator.validate(Constants.LABEL_CART_ITEM, sampleCartItem));
+// console.log(validator.validate(Constants.LABEL_CART_ITEM, sampleCartItem));
+console.log(validator.validate(Constants.LABEL_PRODUCT_ITEM, productItem));
 
 var productSample = {
     name: 'Sofa',

@@ -1,4 +1,4 @@
 {
     "name": "Bedroom",
-    "subcategories": ["double-beds"]
+    "subcategories": ["double-beds", "single-beds", "queen-beds"]
 }

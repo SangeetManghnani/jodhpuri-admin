@@ -8,7 +8,10 @@
         "minLen": 1,
         "items": {
             "type": "string",
-            "minLen": 1
+            "properties": {
+                "type": "string",
+                "minLen": 1
+            }
         }
     },
     "required": ["name", "subcategories"]

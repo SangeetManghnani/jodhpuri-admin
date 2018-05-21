@@ -13,8 +13,14 @@ module.exports.validate = function(modelName, newObject) {
             schema = cartItemSchema;
             break;
         case Constants.LABEL_CATEGORY:
+            schema = categorySchema;
+            break;
         case Constants.LABEL_ORDER_ITEM:
+            schema = orderItemSchema;
+            break;
         case Constants.LABEL_PRODUCT_ITEM:
+            schema = productItemSchema;
+            break;
         case Constants.LABEL_USER:
         default:
             schema = null;
@@ -38,13 +44,14 @@ function validateUtil(newObject, schema) {
         }
     }
 
+    var result = true;
+
     newObjectKeys.map((key, element) => {
         if (schema[key] === undefined) {
             return false;
         }
 
         // do type specific testing here
-        var result = true;
         if (typeof newObject[key] == 'string') {
             result = validateString(newObject[key], schema[key]);
         } else if (typeof newObject[key] == 'number') {
@@ -58,11 +65,9 @@ function validateUtil(newObject, schema) {
         }
 
         // if any of the tests failed, reject the input object
-        if (result == false) {
-            return result;
-        }
+
     });
-    return true;
+    return result;
 }
 
 function validateString(input, conditionObject) {

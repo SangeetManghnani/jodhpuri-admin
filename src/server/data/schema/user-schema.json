@@ -1,1 +1,26 @@
-{}
+{
+    "name": {
+        "type": "string",
+        "minLen": 1
+    },
+    "email": {
+        "type": "string",
+        "minLen": 1
+    },
+    "phone": {
+        "type": "string",
+        "minLen": 10
+    },
+    "createdDate": {
+        "type": "string",
+        "minLen": 1
+    },
+    "orderIds": {
+        "type": "string"
+    },
+    "cartId": {
+        "type": "string",
+        "minLen": 1
+    },
+    "required": ["name", "email", "createdDate", "cartId"]
+}
