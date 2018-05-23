@@ -4,4 +4,7 @@ module.exports = {
     LABEL_ORDER_ITEM: 'orderItem',
     LABEL_PRODUCT_ITEM: 'productItem',
     LABEL_USER: 'user',
+
+    DB_LABEL_PRODUCT_ITEM: 'products',
+    DB_LABEL_CATEGORY: 'categories',
 }

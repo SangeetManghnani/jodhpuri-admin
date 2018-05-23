@@ -11,6 +11,7 @@ var Constants = require('./src/server/Constants');
  * Constants definition
  ********************************/
 global.CLIENT_DIR = path.resolve(__dirname, './src/client');
+global.PUBLIC_DIR = path.resolve(__dirname, '/public');
 
 const securityKey = jsonfile.readFileSync('./serviceAccountKey.json');
 admin.initializeApp({
@@ -36,16 +37,8 @@ var routes = require('./src/server/routes');
 
 configTemplateEngine(app);
 
-// handlebars setup
-// app.engine('hbs', exphbs({
-//     extname: '.hbs',
-//     partialsDir: CLIENT_DIR,
-//     layoutsDir: CLIENT_DIR,
-//     defaultLayout: "main",
-// }));
-// app.set('views', CLIENT_DIR);
-// // view engine set
-// app.set('view engine', 'hbs');
+app.use(express.static(PUBLIC_DIR));
+
 
 app.get('/', function(req, res) {
     res.render('login/login');
