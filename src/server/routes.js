@@ -2,7 +2,7 @@ const productController = require('./controllers/ProductController');
 const categoryController = require('./controllers/CategoryController');
 
 module.exports = function(router) {
-    router.route('/products')
+    router.route('api/v1/products')
         .post((req, res, next) => {
             productController.createProduct(req, res);
         })
@@ -13,7 +13,7 @@ module.exports = function(router) {
             return res.send('Allowed methods are: POST, GET');
         });
 
-    router.route('/products/:productId')
+    router.route('api/v1/products/:productId')
         .put((req, res, next) => {
             productController.createProduct(req, res);
         })
@@ -27,7 +27,7 @@ module.exports = function(router) {
             return res.send('Allowed methods are: PUT, GET, DELETE');
         });
 
-    router.route('/category')
+    router.route('api/v1/category')
         .post((req, res, next) => {
             categoryController.createCategory(req, res);
         })
